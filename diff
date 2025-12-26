@@ -1,0 +1,93 @@
+index.html
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Alexander Ashcraft | Engineering Portfolio</title>
+  <meta name="description" content="Engineering portfolio: projects, results, and resume." />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="container">
+    <nav class="nav">
+      <div class="brand">Alexander Ashcraft</div>
+      <div class="links">
+        <a href="#projects">Projects</a>
+        <a href="resume.pdf">Resume</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <h1>Engineering Portfolio</h1>
+      <p>
+        Projects, results, and supporting artifacts—built to be easy to scan for recruiters and easy to update over time.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">View Projects</a>
+        <a class="btn" href="resume.pdf">Download Resume</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="projects">
+      <h2>Featured Projects</h2>
+
+      <div class="grid">
+        <article class="card">
+          <h3>3-DoF Pick-and-Place Arm (MATLAB)</h3>
+          <p class="meta">Robotics · Controls · Simulation</p>
+          <p>Teach-and-replay GUI: click pick/place points, solve IK, and track motion with PD control.</p>
+          <ul>
+            <li>Workspace boundary checks + clamping</li>
+            <li>IK → trajectory → simulation plots</li>
+            <li>Results: (add your numbers)</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>VIN OCR Vision Pipeline (Python)</h3>
+          <p class="meta">Computer Vision · OpenCV · OCR</p>
+          <p>Standardized preprocessing and evaluation to improve OCR consistency for VIN images.</p>
+          <ul>
+            <li>Grayscale → contrast enhancement → denoise</li>
+            <li>Tracked failure modes and iteration results</li>
+            <li>Results: (add accuracy / error rate)</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Controls Compensator Design</h3>
+          <p class="meta">Root Locus · Bode · Specs Verification</p>
+          <p>Designed lead/lag compensation to meet overshoot and settling-time requirements.</p>
+          <ul>
+            <li>Met specs: (add Ts, %OS)</li>
+            <li>Verified PM / crossover frequency</li>
+            <li>Documented workflow + plots</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>
+        Email: <a href="mailto:YOUR_EMAIL">YOUR_EMAIL</a>
+        · LinkedIn: <a href="YOUR_LINKEDIN" target="_blank" rel="noreferrer">Profile</a>
+        · GitHub: <a href="https://github.com/AlexanderAshcraft" target="_blank" rel="noreferrer">AlexanderAshcraft</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <small>© <span id="y"></span> Alexander Ashcraft</small>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
