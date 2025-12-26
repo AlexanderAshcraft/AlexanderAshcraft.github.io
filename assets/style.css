@@ -66,4 +66,5 @@ h2 { margin: 32px 0 14px; font-size: 22px; }
 
 .contact p { color: var(--muted); line-height: 1.6; }
 .footer { border-top: 1px solid var(--border); margin-top: 28px; color: var(--muted);}
-
+.brand{ white-space: nowrap; }
+.brand .last { margin-left: 0 ; }
