@@ -20,7 +20,7 @@ a:hover { text-decoration: underline; }
   display: flex; align-items: center; justify-content: space-between;
   padding: 10px 0; border-bottom: 1px solid var(--border);
 }
-.brand { font-weight: 650; letter-spacing: 0.2px; }
+.brand { font-weight: 650; letter-spacing: 0.2px; white-space: nowrap; }
 .links { display: flex; gap: 14px; color: var(--muted); }
 .links a { color: var(--muted); }
 .links a:hover { color: var(--text); }
