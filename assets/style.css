@@ -22,11 +22,22 @@ body { background: var(--bg); color: var(--text); }
 a { color: var(--text); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-.container { max-width: 980px; margin: 0 auto; padding: 24px; }
+.container {  width: 100%;
+  max-width: none;   /* removes the 980px limit */
+  margin: 0;         /* removes centering */
+  padding: 0;        /* removes left/right padding */ }
 
-.nav {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 10px 0; border-bottom: 1px solid var(--border);
+.nav{
+  padding: 14px 24px; /* gives breathing room while still full width */
+}
+.hero{
+  padding: 40px 24px 10px;
+}
+main.container{
+  padding: 0 24px 24px;
+}
+.footer{
+  padding: 18px 24px;
 }
 .brand{
   display: flex;
