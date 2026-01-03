@@ -7,38 +7,51 @@
   --accent: #ffffff;
 }
 
-.school-logo{
-  width: 290px;        /* start here */
-  height: 290px;
-  object-fit: contain;
-  display: block;     /* removes weird inline spacing */
-  flex: 0 0 auto;     /* prevents shrinking/stretching */
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
 }
 
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; }
 body { background: var(--bg); color: var(--text); }
 
 a { color: var(--text); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-.container {  width: 100%;
-  max-width: none;   /* removes the 980px limit */
-  margin: 0;         /* removes centering */
-  padding: 0;        /* removes left/right padding */ }
+/* Default layout for MOST of the site (main + footer): padded + centered */
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px;
+}
 
-.nav{
-  padding: 14px 24px; /* gives breathing room while still full width */
+/* Make ONLY the TOP area (header) full-width on the page */
+header.container {
+  max-width: none;     /* break out of 980px */
+  padding-left: 0;     /* remove side padding only */
+  padding-right: 0;
 }
-.hero{
-  padding: 40px 24px 10px;
+
+/* Logo sizing (navbar icon) */
+.school-logo{
+  width: 48px;         /* change this to make it bigger/smaller */
+  height: 48px;
+  object-fit: contain;
+  display: block;
+  flex: 0 0 auto;
 }
-main.container{
-  padding: 0 24px 24px;
+
+/* Nav */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px;                  /* internal padding for full-width header */
+  border-bottom: 1px solid var(--border);
 }
-.footer{
-  padding: 18px 24px;
-}
+
 .brand{
   display: flex;
   align-items: center;
@@ -47,15 +60,26 @@ main.container{
   letter-spacing: 0.2px;
   white-space: nowrap;
 }
+
+.brand .last { margin-left: 0; }
+
 .links { display: flex; gap: 14px; color: var(--muted); }
 .links a { color: var(--muted); }
 .links a:hover { color: var(--text); }
 
-.hero { padding: 40px 0 10px; }
+/* Hero (top section) — keep internal padding to align with nav */
+.hero { padding: 40px 24px 10px; }
 .hero h1 { font-size: 40px; margin: 0 0 12px; }
-.hero p { max-width: 70ch; color: var(--muted); line-height: 1.55; margin: 0 0 18px; }
+.hero p {
+  max-width: 70ch;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0 0 18px;
+}
 
+/* Buttons */
 .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
 .btn {
   display: inline-block;
   border: 1px solid var(--border);
@@ -64,14 +88,17 @@ main.container{
   border-radius: 12px;
   font-weight: 600;
 }
+
 .btn.primary {
   background: var(--accent);
   color: #0b0b0c;
   border-color: transparent;
 }
 
+/* Headings */
 h2 { margin: 32px 0 14px; font-size: 22px; }
 
+/* Cards grid */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -85,12 +112,17 @@ h2 { margin: 32px 0 14px; font-size: 22px; }
   padding: 16px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.25);
 }
+
 .card h3 { margin: 0 0 6px; font-size: 16px; }
 .meta { margin: 0 0 10px; color: var(--muted); font-size: 13px; }
 .card p { color: var(--muted); line-height: 1.5; }
 .card ul { margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
 
+/* Contact + footer */
 .contact p { color: var(--muted); line-height: 1.6; }
-.footer { border-top: 1px solid var(--border); margin-top: 28px; color: var(--muted);}
-.brand .last { margin-left: 0; }
 
+.footer {
+  border-top: 1px solid var(--border);
+  margin-top: 28px;
+  color: var(--muted);
+}
