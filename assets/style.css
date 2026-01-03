@@ -34,22 +34,26 @@ header.container {
   padding-right: 0;
 }
 
-/* Logo sizing (navbar icon) */
+/* Logo sizing (navbar icon) — scale by HEIGHT so it won't push layout */
 .school-logo{
-  width: 160px;         /* change this to make it bigger/smaller */
-  height: 160px;
+  height: 44px;        /* change ONLY this to scale the logo */
+  width: auto;         /* keeps aspect ratio */
+  max-width: 70px;     /* prevents wide logos from pushing links */
   object-fit: contain;
   display: block;
   flex: 0 0 auto;
 }
 
 /* Nav */
-.nav {
+.nav{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 24px;                  /* internal padding for full-width header */
+  gap: 16px;
+  flex-wrap: nowrap;
+  padding: 10px 24px;                 /* inner padding for full-width header */
   border-bottom: 1px solid var(--border);
+  min-height: 64px;                   /* stable header height */
 }
 
 .brand{
@@ -59,11 +63,19 @@ header.container {
   font-weight: 650;
   letter-spacing: 0.2px;
   white-space: nowrap;
+  flex: 0 0 auto;
 }
 
 .brand .last { margin-left: 0; }
 
-.links { display: flex; gap: 14px; color: var(--muted); }
+.links{
+  display: flex;
+  gap: 14px;
+  color: var(--muted);
+  margin-left: auto;                  /* pins links to the far right */
+  flex: 0 0 auto;
+}
+
 .links a { color: var(--muted); }
 .links a:hover { color: var(--text); }
 
