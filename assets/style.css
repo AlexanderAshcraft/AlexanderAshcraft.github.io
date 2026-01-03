@@ -1,140 +1,186 @@
-:root {
-  --bg: #0b0b0c;
-  --panel: #121214;
-  --text: #f4f4f5;
-  --muted: #b6b6bd;
-  --border: #25252a;
-  --accent: #ffffff;
+:root{
+  --bg: #f0f2f6;        /* page background */
+  --sidebar: #ffffff;   /* left sidebar */
+  --card: #ffffff;      /* main content card */
+  --text: #111827;
+  --muted: #4b5563;
+  --border: #e5e7eb;
+  --accent: #ba0c2f;    /* OSU-ish scarlet */
+  --shadow: 0 8px 24px rgba(0,0,0,0.08);
+  --radius: 14px;
+  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
 }
 
-* { box-sizing: border-box; }
-
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+*{ box-sizing:border-box; }
+html, body{ height:100%; }
+body{
+  margin:0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
 }
 
-body { background: var(--bg); color: var(--text); }
+a{ color: inherit; text-decoration:none; }
+a:hover{ text-decoration: underline; }
 
-a { color: var(--text); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-/* Default layout for MOST of the site (main + footer): padded + centered */
-.container {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 24px;
+/* App layout */
+.app{
+  display:flex;
+  min-height:100vh;
 }
 
-/* Make ONLY the TOP area (header) full-width on the page */
-header.container {
-  max-width: none;     /* break out of 980px */
-  padding-left: 0;     /* remove side padding only */
-  padding-right: 0;
+/* Sidebar */
+.sidebar{
+  width: 260px;
+  background: var(--sidebar);
+  border-right: 1px solid var(--border);
+  padding: 18px 16px;
 }
 
-/* Logo sizing (navbar icon) — scale by HEIGHT so it won't push layout */
-.school-logo{
-  height: 44px;        /* change ONLY this to scale the logo */
-  width: auto;         /* keeps aspect ratio */
-  max-width: 70px;     /* prevents wide logos from pushing links */
-  object-fit: contain;
-  display: block;
-  flex: 0 0 auto;
-}
-
-/* Nav */
-.nav{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: nowrap;
-  padding: 10px 24px;                 /* inner padding for full-width header */
+.sidebar-top{
+  display:flex;
+  justify-content:center;
+  padding: 10px 0 16px;
   border-bottom: 1px solid var(--border);
-  min-height: 64px;                   /* stable header height */
+  margin-bottom: 14px;
 }
 
-.brand{
-  display: flex;
-  align-items: center;
+.sidebar-logo{
+  height: 92px;     /* change this to scale logo */
+  width: auto;
+  max-width: 180px; /* prevents super wide logos */
+  object-fit: contain;
+  display:block;
+}
+
+.sidebar-nav{
+  display:flex;
+  flex-direction:column;
   gap: 10px;
-  font-weight: 650;
-  letter-spacing: 0.2px;
-  white-space: nowrap;
-  flex: 0 0 auto;
+  padding-top: 10px;
 }
 
-.brand .last { margin-left: 0; }
-
-.links{
-  display: flex;
-  gap: 14px;
-  color: var(--muted);
-  margin-left: auto;                  /* pins links to the far right */
-  flex: 0 0 auto;
+.sidebar-nav a{
+  padding: 12px 14px;
+  border-radius: 10px;
+  color: var(--text);
+  font-weight: 600;
+  text-decoration:none;
 }
 
-.links a { color: var(--muted); }
-.links a:hover { color: var(--text); }
-
-/* Hero (top section) — keep internal padding to align with nav */
-.hero { padding: 40px 24px 10px; }
-.hero h1 { font-size: 40px; margin: 0 0 12px; }
-.hero p {
-  max-width: 70ch;
-  color: var(--muted);
-  line-height: 1.55;
-  margin: 0 0 18px;
+.sidebar-nav a:hover{
+  background: #f6f7fb;
+  text-decoration:none;
 }
 
-/* Buttons */
-.cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.sidebar-nav a.active{
+  background: var(--accent);
+  color: #ffffff;
+}
 
-.btn {
-  display: inline-block;
+/* Content area */
+.content{
+  flex:1;
+  padding: 22px;
+}
+
+.content-card{
+  background: var(--card);
   border: 1px solid var(--border);
-  background: transparent;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px;
+  max-width: 1100px;
+}
+
+/* Hero */
+.hero h1{
+  margin: 0 0 10px;
+  font-size: 44px;
+  line-height: 1.1;
+}
+
+.hero p{
+  margin: 0 0 18px;
+  max-width: 75ch;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.cta{
+  display:flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.btn{
+  display:inline-block;
+  border: 1px solid var(--border);
   padding: 10px 14px;
   border-radius: 12px;
-  font-weight: 600;
+  font-weight: 700;
+  background: transparent;
+  color: var(--text);
+  text-decoration:none;
 }
+.btn:hover{ text-decoration:none; }
 
-.btn.primary {
+.btn.primary{
   background: var(--accent);
-  color: #0b0b0c;
+  color: #ffffff;
   border-color: transparent;
 }
 
-/* Headings */
-h2 { margin: 32px 0 14px; font-size: 22px; }
+/* Sections */
+h2{
+  margin: 26px 0 14px;
+  font-size: 22px;
+  display:inline-block;
+  padding-bottom: 6px;
+  border-bottom: 3px solid var(--accent); /* like your friend’s underline */
+}
 
-/* Cards grid */
-.grid {
-  display: grid;
+/* Projects grid */
+.grid{
+  display:grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 14px;
 }
 
-.card {
-  background: var(--panel);
-  border: 1px solid var(--border);
+.card{
+  background: #0b0b0c;             /* if you want all light, change to #fff */
+  border: 1px solid #1f2937;        /* match the dark card style */
   border-radius: 18px;
   padding: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  color: #f4f4f5;
 }
 
-.card h3 { margin: 0 0 6px; font-size: 16px; }
-.meta { margin: 0 0 10px; color: var(--muted); font-size: 13px; }
-.card p { color: var(--muted); line-height: 1.5; }
-.card ul { margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
+.card h3{ margin: 0 0 6px; font-size: 16px; }
+.meta{ margin: 0 0 10px; color: #cbd5e1; font-size: 13px; }
+.card p{ color: #cbd5e1; line-height: 1.5; }
+.card ul{ margin: 10px 0 0; padding-left: 18px; color: #cbd5e1; }
 
 /* Contact + footer */
-.contact p { color: var(--muted); line-height: 1.6; }
+.contact p{ color: var(--muted); line-height: 1.6; }
 
-.footer {
+.footer{
   border-top: 1px solid var(--border);
-  margin-top: 28px;
+  margin-top: 24px;
+  padding-top: 14px;
   color: var(--muted);
 }
+
+/* Responsive: sidebar becomes top stack */
+@media (max-width: 900px){
+  .app{ flex-direction: column; }
+  .sidebar{
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .content{ padding: 14px; }
+  .content-card{ padding: 18px; }
+}
+
