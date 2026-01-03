@@ -36,8 +36,8 @@ header.container {
 
 /* Logo sizing (navbar icon) */
 .school-logo{
-  width: 48px;         /* change this to make it bigger/smaller */
-  height: 48px;
+  width: 160px;         /* change this to make it bigger/smaller */
+  height: 160px;
   object-fit: contain;
   display: block;
   flex: 0 0 auto;
