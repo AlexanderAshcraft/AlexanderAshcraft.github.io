@@ -8,8 +8,8 @@
 }
 
 .school-logo{
-  width: 34px;        /* start here */
-  height: 34px;
+  width: 10px;        /* start here */
+  height: 10px;
   object-fit: contain;
   display: block;     /* removes weird inline spacing */
   flex: 0 0 auto;     /* prevents shrinking/stretching */
