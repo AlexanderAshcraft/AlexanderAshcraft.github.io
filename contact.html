@@ -1,20 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact | Alexander Ashcraft</title>
+  <meta name="description" content="Contact Alexander Ashcraft." />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
 
-<nav class="sidebar-nav" id="sidebarNav">
-  <a href="index.html" data-page="index.html">About Me</a>
-  <a href="projects.html" data-page="projects.html">Projects</a>
-  <a href="contact.html" data-page="contact.html">Contact</a>
-  <a href="resume.pdf?v=4">Resume</a>
-</nav>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <img src="assets/Ohio-State-Logo.png" alt="Ohio State logo" class="sidebar-logo" />
+      </div>
 
-<script>
-  (function () {
-    const nav = document.getElementById("sidebarNav");
-    if (!nav) return;
+      <nav class="sidebar-nav" id="sidebarNav">
+        <a href="index.html" data-page="index.html">About Me</a>
+        <a href="projects.html" data-page="projects.html">Projects</a>
+        <a href="contact.html" data-page="contact.html">Contact</a>
+        <a href="resume.pdf?v=4">Resume</a>
+      </nav>
+    </aside>
 
-    const current = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+    <!-- Main content -->
+    <main class="content">
+      <div class="content-card">
+        <section class="hero">
+          <h1>Contact</h1>
+          <p>
+            Best ways to reach me. I usually respond within 1–2 days.
+          </p>
+        </section>
 
-    nav.querySelectorAll("a[data-page]").forEach(a => {
-      a.classList.toggle("active", (a.dataset.page || "").toLowerCase() === current);
-    });
-  })();
-</script>
+        <section class="contact">
+          <h2>Contact Info</h2>
+          <p>
+            Email:
+            <a href="mailto:alexander.w.ashcraft@gmail.com">alexander.w.ashcraft@gmail.com</a>
+            <br><br>
+
+            LinkedIn:
+            <a href="https://www.linkedin.com/in/alexander-ashcraft-112bb5290/" target="_blank" rel="noreferrer">alexander-ashcraft-112bb5290</a>
+            <br><br>
+
+            GitHub:
+            <a href="https://github.com/AlexanderAshcraft" target="_blank" rel="noreferrer">AlexanderAshcraft</a>
+          </p>
+        </section>
+
+        <footer class="footer">
+          <small>© <span id="y"></span> Alexander Ashcraft</small>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Auto-highlight active sidebar tab -->
+  <script>
+    (function () {
+      const nav = document.getElementById("sidebarNav");
+      if (!nav) return;
+
+      const current = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+
+      nav.querySelectorAll("a[data-page]").forEach(a => {
+        a.classList.toggle("active", (a.dataset.page || "").toLowerCase() === current);
+      });
+    })();
+  </script>
+</body>
+</html>
