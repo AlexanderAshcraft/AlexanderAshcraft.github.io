@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Alexander Ashcraft | Engineering Portfolio</title>
   <meta name="description" content="Engineering portfolio: projects, results, and resume." />
-  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/style.css?v=1" />
 </head>
 
 <body>
@@ -27,23 +27,40 @@
     <!-- Main content -->
     <main class="content">
       <div class="content-card">
-        <section class="hero">
-        <h1>About Me</h1>
-    <p>
-      I’m Alexander Ashcraft, a mechanical engineering student interested in manufacturing and process engineering.
-      I like building practical solutions and documenting results clearly.
-    </p>
 
-    <div class="cta">
-      <a class="btn primary" href="projects.html">View Projects</a>
-      <a class="btn" href="resume.pdf?v=4">Download Resume</a>
-    </div>
-  </div>
+        <!-- About section (friend-style layout) -->
+        <section class="about-wrap">
+          <div class="about-left">
+            <h1 class="page-title">About Me</h1>
+            <div class="title-underline"></div>
 
-  <div class="about-photo">
-    <img src="assets/WebsitePortrait.jpg" alt="Portrait of Alexander Ashcraft" class="profile-photo" />
-  </div>
-</section>
+            <p class="about-paragraph">
+              I’m Alexander Ashcraft, a mechanical engineering student interested in manufacturing and process engineering.
+              I like building practical solutions and documenting results clearly.
+            </p>
+
+            <p class="about-paragraph">
+              This site is a collection of projects, results, and supporting artifacts. Use the sidebar to browse projects,
+              download my resume, or reach out.
+            </p>
+
+            <div class="cta">
+              <a class="btn primary" href="projects.html">View Projects</a>
+              <a class="btn" href="resume.pdf?v=4">Download Resume</a>
+            </div>
+          </div>
+
+          <div class="about-right">
+            <div class="photo-card">
+              <img
+                src="assets/WebsitePortrait.jpg"
+                alt="Portrait of Alexander Ashcraft"
+                class="profile-photo"
+              />
+            </div>
+          </div>
+        </section>
+
         <footer class="footer">
           <small>© <span id="y"></span> Alexander Ashcraft</small>
         </footer>
