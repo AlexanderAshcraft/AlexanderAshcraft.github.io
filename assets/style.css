@@ -137,6 +137,57 @@ a:hover{ text-decoration: underline; }
   border-color: transparent;
 }
 
+/* About page: text + photo layout */
+.about-hero{
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.about-text h1{
+  margin: 0 0 10px;
+  font-size: 44px;
+  line-height: 1.1;
+}
+
+.about-text p{
+  margin: 0 0 18px;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 75ch;
+}
+
+.about-photo{
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* The photo itself */
+.profile-photo{
+  width: 100%;
+  max-width: 320px;     /* change this to make photo bigger/smaller */
+  aspect-ratio: 4 / 5;  /* portrait shape */
+  object-fit: cover;    /* crops instead of stretching */
+  object-position: 50% 25%; /* shifts crop upward toward face */
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+}
+
+/* Mobile: stack text above photo */
+@media (max-width: 900px){
+  .about-hero{
+    grid-template-columns: 1fr;
+  }
+  .about-photo{
+    justify-content: flex-start;
+  }
+  .profile-photo{
+    max-width: 260px;
+  }
+}
+
 /* Sections */
 h2{
   margin: 26px 0 14px;
