@@ -1,21 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects | Alexander Ashcraft</title>
+  <meta name="description" content="Projects by Alexander Ashcraft." />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
 
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <img src="assets/Ohio-State-Logo.png" alt="Ohio State logo" class="sidebar-logo" />
+      </div>
 
-<nav class="sidebar-nav" id="sidebarNav">
-  <a href="index.html" data-page="index.html">About Me</a>
-  <a href="projects.html" data-page="projects.html">Projects</a>
-  <a href="contact.html" data-page="contact.html">Contact</a>
-  <a href="resume.pdf?v=4">Resume</a>
-</nav>
+      <nav class="sidebar-nav" id="sidebarNav">
+        <a href="index.html" data-page="index.html">About Me</a>
+        <a href="projects.html" data-page="projects.html">Projects</a>
+        <a href="contact.html" data-page="contact.html">Contact</a>
+        <a href="resume.pdf?v=4">Resume</a>
+      </nav>
+    </aside>
 
-<script>
-  (function () {
-    const nav = document.getElementById("sidebarNav");
-    if (!nav) return;
+    <!-- Main content -->
+    <main class="content">
+      <div class="content-card">
+        <section class="hero">
+          <h1>Projects</h1>
+          <p>
+            Here are some of the projects I’ve worked on. Click a project to learn more.
+          </p>
+        </section>
 
-    const current = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+        <section>
+          <h2>Featured Projects</h2>
 
-    nav.querySelectorAll("a[data-page]").forEach(a => {
-      a.classList.toggle("active", (a.dataset.page || "").toLowerCase() === current);
-    });
-  })();
-</script>
+          <div class="grid">
+            <article class="card">
+              <h3>Mobi-Lift: Accessible Vehicle Seating System</h3>
+              <p class="meta">CAD/Design · Manufacturing · MATLAB</p>
+              <p>Designed a portable, customizable assistive mobility concept using Onshape mechanical design and MATLAB/Arduino sensor-driven servo control, and was selected to present at the Engineering Design Showcase.</p>
+              <ul>
+                <li>Role: Market research → requirements → mechanical design.</li>
+                <li>Tools: Onshape, MATLAB, Arduino, servo + sensors.</li>
+                <li>Result: Selected for Engineering Design Showcase presentation.</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>Connect 4 & Crabs: MATLAB Game Development</h3>
+              <p class="meta">Logic & State Machines · Input Validation · Win Conditions</p>
+              <p>Built a Connect4-style MATLAB game with win logic, input validation, animations, and game-state handling using simpleGameEngine.</p>
+              <ul>
+                <li>Role: Built and refined core gameplay mechanics.</li>
+                <li>Tools: MATLAB (simpleGameEngine)—win logic, input checks.</li>
+                <li>Results: Produced a polished playable game and a comprehensive team report.</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>Controls Compensator Design</h3>
+              <p class="meta">Root Locus · Bode · Specs Verification</p>
+              <p>Designed lead/lag compensation to meet overshoot and settling-time requirements.</p>
+              <ul>
+                <li>Met specs: (add Ts, %OS)</li>
+                <li>Verified PM / crossover frequency</li>
+                <li>Documented workflow + plots</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <small>© <span id="y"></span> Alexander Ashcraft</small>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Auto-highlight active sidebar tab -->
+  <script>
+    (function () {
+      const nav = document.getElementById("sidebarNav");
+      if (!nav) return;
+
+      const current = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+
+      nav.querySelectorAll("a[data-page]").forEach(a => {
+        a.classList.toggle("active", (a.dataset.page || "").toLowerCase() === current);
+      });
+    })();
+  </script>
+</body>
+</html>
