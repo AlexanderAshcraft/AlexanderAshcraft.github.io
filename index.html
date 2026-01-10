@@ -99,3 +99,24 @@
 </body>
 </html>
 
+
+<nav class="sidebar-nav" id="sidebarNav">
+  <a href="index.html" data-page="index.html">About Me</a>
+  <a href="projects.html" data-page="projects.html">Projects</a>
+  <a href="contact.html" data-page="contact.html">Contact</a>
+  <a href="resume.pdf?v=4">Resume</a>
+</nav>
+
+<script>
+  (function () {
+    const nav = document.getElementById("sidebarNav");
+    if (!nav) return;
+
+    const current = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+
+    nav.querySelectorAll("a[data-page]").forEach(a => {
+      a.classList.toggle("active", (a.dataset.page || "").toLowerCase() === current);
+    });
+  })();
+</script>
+
