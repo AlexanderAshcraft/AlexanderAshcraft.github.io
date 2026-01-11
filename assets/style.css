@@ -338,3 +338,15 @@ h2{
   object-fit: cover;
   display: block;
 }
+
+/* Hover lift + glow for clickable project cards */
+.card-link .card{
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.card-link:hover .card{
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,0.18);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.55);
+}
+
