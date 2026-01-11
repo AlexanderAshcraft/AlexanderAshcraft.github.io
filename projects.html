@@ -32,25 +32,51 @@
 
         <section>
           <h2>Featured Projects</h2>
+
           <div class="grid">
-            <!-- reuse your cards -->
-            <article class="card">
-              <h3>Mobi-Lift: Accessible Vehicle Seating System</h3>
-              <p class="meta">CAD/Design · Manufacturing · MATLAB</p>
-              <p>Designed a portable, customizable assistive mobility concept using Onshape mechanical design and MATLAB/Arduino sensor-driven servo control.</p>
-            </article>
 
-            <article class="card">
-              <h3>Connect 4 & Crabs: MATLAB Game Development</h3>
-              <p class="meta">Logic & State Machines · Input Validation · Win Conditions</p>
-              <p>Built a Connect4-style MATLAB game with win logic, input validation, animations, and game-state handling using simpleGameEngine.</p>
-            </article>
+            <!-- Mobi-Lift -->
+            <a class="card-link" href="projects/mobi-lift.html">
+              <article class="card">
+                <div class="card-media">
+                  <img src="assets/projects/mobi-lift.jpg" alt="Mobi-Lift CAD render" />
+                </div>
+                <h3>Mobi-Lift: Accessible Vehicle Seating System</h3>
+                <p class="meta">CAD/Design · Manufacturing · MATLAB</p>
+                <p>Designed a portable, customizable assistive mobility concept using Onshape mechanical design and MATLAB/Arduino sensor-driven servo control.</p>
+              </article>
+            </a>
 
-            <article class="card">
-              <h3>Controls Compensator Design</h3>
-              <p class="meta">Root Locus · Bode · Specs Verification</p>
-              <p>Designed lead/lag compensation to meet overshoot and settling-time requirements.</p>
-            </article>
+            <!-- Connect 4 & Crabs -->
+            <a class="card-link" href="projects/connect4-crabs.html">
+              <article class="card">
+                <div class="card-media">
+                  <img src="assets/projects/connect4-crabs.jpg" alt="Connect 4 & Crabs render or screenshot" />
+                </div>
+                <h3>Connect 4 &amp; Crabs: MATLAB Game Development</h3>
+                <p class="meta">Logic &amp; State Machines · Input Validation · Win Conditions</p>
+                <p>Built a Connect4-style MATLAB game with win logic, input validation, animations, and game-state handling using simpleGameEngine.</p>
+              </article>
+            </a>
+
+            <!-- Humanitarian Logistics -->
+            <a class="card-link" href="projects/humanitarian-logistics-lp.html">
+              <article class="card">
+                <div class="card-media">
+                  <img src="assets/projects/humanitarian-logistics-lp.jpg" alt="Humanitarian Logistics render" />
+                </div>
+                <h3>HumanitarianLogistics:LP</h3>
+                <p class="meta">Systems · Planning · Optimization</p>
+                <p>Add a 1–2 sentence summary of what you built and the outcome.</p>
+              </article>
+            </a>
+
+            <!-- Add these next when ready -->
+            <!--
+            <a class="card-link" href="projects/gehaliaide-x-wind-turbine.html">...</a>
+            <a class="card-link" href="projects/ctbb-mc.html">...</a>
+            -->
+
           </div>
         </section>
 
@@ -64,6 +90,7 @@
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
+
   <script>
     (function () {
       const nav = document.getElementById("sidebarNav");
@@ -76,15 +103,3 @@
   </script>
 </body>
 </html>
-
-<a class="card-link" href="projects/humanitarian-logistics-lp.html">
-  <article class="card">
-    <div class="card-media">
-      <img src="assets/projects/humanitarian-logistics-lp.jpg" alt="Humanitarian Logistics (LP) render" />
-    </div>
-    <h3>HumanitarianLogistics:LP</h3>
-    <p class="meta">Systems · Planning · Optimization</p>
-    <p>Short 1–2 line summary of what you built and the result.</p>
-  </article>
-</a>
-
