@@ -350,3 +350,10 @@ h2{
   box-shadow: 0 14px 34px rgba(0,0,0,0.55);
 }
 
+.card-media img{
+  transition: transform .2s ease;
+}
+
+.card-link:hover .card-media img{
+  transform: scale(1.03);
+}
