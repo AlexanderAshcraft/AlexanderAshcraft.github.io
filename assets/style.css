@@ -319,6 +319,8 @@ h2{
   }
 }
 
+/* ===== Project card thumbnails + clickable cards ===== */
+
 .card-link{ text-decoration:none; color:inherit; display:block; }
 .card-link:hover{ text-decoration:none; }
 
